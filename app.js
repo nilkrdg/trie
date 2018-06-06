@@ -1,9 +1,12 @@
-const Trie = require("./trie");
+"use strict"
+const Trie = require("./lib/trie");
 let words = [ "hello", "dog", "hell","cat","a", "help","helps","helping"];
 // Construct trie
 let dictionary = new Trie();
 for (let i = 0; i < words.length ; i++)
 dictionary.addWord(words[i]);
-console.log(" "+dictionary.isPresent("th"));
+let isPresent = dictionary.isPresent("hel");
+isPresent ? console.log("hel is present in the trie.") : console.log("hel is not present in the trie.");
+console.log("get auto suggestions for hel:");
 let suggestions = dictionary.getAutoSuggestions(dictionary.root,"hel");
-console.log(dictionary.filterSuggestions(suggestions, "hel", 90));
+console.log("best match for %70 similarity: "+dictionary.filterSuggestions(suggestions, "hel", 70));
