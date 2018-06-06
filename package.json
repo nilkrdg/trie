@@ -2,7 +2,7 @@
   "name": "trie",
   "version": "1.0.0",
   "description": "A fast access dictionary implemented with Trie data structure.",
-  "main": "trie.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
