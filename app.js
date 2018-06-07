@@ -4,8 +4,7 @@ let words = [ "hello", "dog", "hell","cat","a", "help","helps","helping"];
 
 // Construct trie
 let dictionary = new Trie();
-for (let i = 0; i < words.length ; i++)
-dictionary.addWord(words[i]);
+words.forEach((word) => {dictionary.addWord(word);});
 
 //Check isPresent method
 console.log(dictionary.isPresent("hel")); // false
@@ -17,3 +16,4 @@ let suggestions = dictionary.getAutoSuggestions(dictionary.root,"hel");  // ["he
 
 //Check filterSuggestions method
 console.log("best match for %70 similarity: "+dictionary.filterSuggestions(suggestions, "hel", 70)); // hell
+
